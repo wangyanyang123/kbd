@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的导航</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+      <div class="wrapper" id="abc"></div>
+    </main>
+    <footer></footer>
+    <script>
+        keys = {
+            '0': ['q','w','e','r','t','y','u','i','o','p'],
+            '1': ['a','s','d','f','g','h','j','k','l'],
+            '2': ['z','x','c','v','b','n','m'],
+            length: 3
+        }
+        hash = {
+            q: 'qq.com',
+            z: 'zhihu.com',
+            w: 'weibo.com',
+            t: 'taobao.com',
+            j: 'jianshu.com',
+            r: 'renren.com',
+            t: 'tianya.cn'
+        }
+        hashInLocalStorage = JSON.parse(localStorage.getItem('ss')||'null')
+        if(hashInLocalStorage){
+            hash = hashInLocalStorage
+        }
+        index = 0
+        while(index < keys['length']){
+        div1 = document.createElement('div')
+        abc.appendChild(div1)
+        row = keys[index]
+        index2 = 0
+        while(index2 < row['length']){
+        kbd1 = document.createElement('kbd')
+        kbd1.textContent = row[index2]
+        button1 = document.createElement('button')
+        button1.textContent = 'e'
+        button1.id = row[index2]
+        button1.onclick = function(jianting){
+            key = (jianting['target']['id'])
+            x = prompt('给我一个网址')
+            hash[key] = x
+            localStorage.setItem('ss', JSON.stringify(hash))
+        }
+        kbd1.appendChild(button1)
+        div1.appendChild(kbd1)
+        index2 = index2 + 1
+        }
+        index = index + 1
+        
+        }
+
+        document.onkeypress = function(jianting){
+           key = jianting['key']
+           website = hash[key]
+           console.log(website)
+           //location.href = 'http://'+website
+           window.open('http://' + website, '_blank')
+        }
+
+    </script>
+</body>
+</html>
