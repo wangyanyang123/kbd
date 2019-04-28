@@ -1,23 +1,40 @@
 *{margin: 0; padding: 0;}
 a{text-decoration: none;}
+body{
+    background: grey url(./bg-min.jpg) no-repeat center center;
+    background-size: cover;
+}
 kbd{
-    border: 1px solid red;
-    width: 4em; height: 4em;
+    border: 1px solid #373737;
+    width: 4em;
+    height: 4em;
     display: inline-block;
     text-transform: uppercase;
     position: relative;
+    background: linear-gradient(to bottom, #292929 0%,#111111 100%);
+    color: #c5c5c5;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #1a1b1c, 0 0 0 2px #1f2020, 0 3px 0 1px #080808;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
 }
 #abc > div:nth-child(2){
-    margin-left: 2em;
+    margin-left: -20px;
 }
 #abc > div:nth-child(3){
-    margin-left: 4em;
+    margin-left: -108px;
 }
 #abc{
     display: inline-block;
 }
 main{
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 kbd > button{
     position: absolute;
@@ -25,7 +42,37 @@ kbd > button{
     bottom: 0px;
     font-size: 10px;
     display: none;
+    text-transform: lowercase;
+    background: #1a1b1c;
+    border: none;
+    color: #c5c5c5;
 }
 kbd:hover > button{
     display: inline-block;
+}
+.row{
+    margin: 20px ;
+}
+.key{
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Microsoft JhengHei UI;
+    position: relative;
+}
+.wrapper{
+    background: rgba(2, 0, 2, 0.2);
+    border-radius: 10px;
+}
+.key img{
+width: 12px;
+height: 12px;
+position: absolute;
+left: 4px;
+bottom: 4px;
+}
+.key .text{
+    position: absolute;
+    left: 16px;
+    top: 8px;
 }
