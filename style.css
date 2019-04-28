@@ -40,7 +40,7 @@ kbd > button{
     position: absolute;
     right: 0px;
     bottom: 0px;
-    font-size: 10px;
+    font-size: 7px;
     display: none;
     text-transform: lowercase;
     background: #1a1b1c;
